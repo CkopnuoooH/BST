@@ -28,8 +28,8 @@ BinarySearchTree::Node::Node(const Node &other)
 bool BinarySearchTree::Node::operator==(const Node &other) const
 {
     return keyValuePair == other.keyValuePair &&
-           ((!left && !other.left)  (left && other.left && *left == *other.left)) &&
-           ((!right && !other.right)  (right && other.right && *right == *other.right));
+           ((!left && !other.left)||(left && other.left && *left == *other.left)) &&
+           ((!right && !other.right)||(right && other.right && *right == *other.right));
 }
 
 void BinarySearchTree::Node::output_node_tree() const
